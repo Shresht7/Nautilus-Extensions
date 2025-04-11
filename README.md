@@ -25,7 +25,19 @@ Whenever a script is called, Nautilus automatically sets a handful of environmen
 - https://help.ubuntu.com/community/NautilusScriptsHowto
 - https://www.linux.org/threads/working-with-nautilus-scripts.44380/
 
-## References
+## Nautilus Extensions
+
+Nautilus extensions are a bit more powerful than scripts. They allow you to create custom context-menu items, add new columns to the list mode display, add custom properties etc. Nautilus extensions often written in Python using the `nautilus-python` package. They live in the `~/.local/share/nautilus-python/extensions/` directory.
+
+### References
+
+- https://gnome.pages.gitlab.gnome.org/nautilus-python/
+
+---
+
+## License
+
+This project is licensed under the [MIT License](./LICENSE)
 
 <!-- LINKS -->
 [Nautilus]: https://apps.gnome.org/Nautilus/
