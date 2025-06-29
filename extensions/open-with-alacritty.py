@@ -4,7 +4,7 @@ Nautilus extension to open the current directory in Alacritty
 
 # Imports
 from gi.repository import Nautilus, GObject
-from subprocess import call
+from subprocess import run
 from typing import List
 
 # Open in Alacritty Extension
@@ -26,6 +26,6 @@ class AlacrittyExtension(GObject.GObject, Nautilus.MenuProvider):
         Opens the specified directory in Alacritty
         """
         for file in files:
-            filepath = '"' + file.get_location().get_path() + '"'  # Quote paths to handle spaces and special characters
-            call("alacritty " + "--working-directory " + filepath, shell=True)
+            filepath = file.get_location().get_path()
+            run(["alacritty", "--working-directory", filepath])
 

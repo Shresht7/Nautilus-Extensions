@@ -4,7 +4,7 @@ Nautilus extension to open selected files or directories in Visual Studio Code.
 
 # Imports
 from gi.repository import Nautilus, GObject
-from subprocess import call
+from subprocess import run
 from typing import List
 
 # Open in VSCode Extension
@@ -38,7 +38,7 @@ class VSCodeExtension(GObject.GObject, Nautilus.MenuProvider):
         Opens the specified files or directories in Visual Studio Code using the `code` CLI.
         """
         for file in files:
-            filepath = '"' + file.get_location().get_path() + '"'  # Quote paths to handle spaces and special characters
-            call("code " + filepath, shell=True)
+            filepath = file.get_location().get_path()
+            run(["code", filepath])
 
 
